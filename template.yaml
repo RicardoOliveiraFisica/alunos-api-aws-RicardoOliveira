@@ -23,7 +23,7 @@ Resources:
     Properties:
       CodeUri: presignedUrl/
       Handler: app.lambda_handler
-      Runtime: python3.9
+      Runtime: python3.13
       Timeout: 3
       Architectures:
         - x86_64
@@ -45,7 +45,7 @@ Resources:
     Properties:
       CodeUri: categorize/
       Handler: app.lambda_handler
-      Runtime: python3.9
+      Runtime: python3.13
       Architectures:
         - x86_64
       Environment:
@@ -69,14 +69,14 @@ Resources:
     Properties:
       CodeUri: generateContent/
       Handler: app.lambda_handler
-      Runtime: python3.9
+      Runtime: python3.13
       Architectures:
         - x86_64
       Environment:
         Variables:
-          MODEL_ID: us.anthropic.claude-3-haiku-20240307-v1:0
-          PROMPT_TITLE: "Considere ser um especialista em marketing e copywrite, escreva um titulo chamativo para meu proeduto com base nas etiqutas que irei disponibilizar logo mais. O resultado precisa ser somente o titulo. Deixe claro o que é o produto em seu titulo. Etiquetas: "
-          PROMPT_DESCRIPTION: "Analise a imagem e gere um titulo com base nas labels(etiquetas) que você vai receber e gere uma descrição dos beneficios e qualidades do produto,seja especifico sobre o produto e chamativo, você vai precisar assumir o papel de especialista de marketing digital e direitos autorais, essa descrição precisa ser em português pt br"
+          MODEL_ID: us.anthropic.claude-3-5-haiku-20241022-v1:0
+          PROMPT_TITLE: "Considere ser um especialista em marketing e copywrite, escreva um titulo chamativo para meu produto com base nas etiquetas que irei disponibilizar logo mais. O resultado precisa ser somente o titulo. Deixe claro o que é o produto em seu titulo. Escreva em português e com no máximo 10 palavras. Etiquetas: "
+          PROMPT_DESCRIPTION: "Considere ser um especialista em marketing e copywrite, escreva uma descrição do produto, de forma conseguir convencer o cliente dos seus benefícios e qualidades. Identifique melhor o produto se baseando nas etiquetas, como também, utilize o titulo disponível no final do texto. Gere o conteúdo em portugues BR com no máximo 1 paragrafo e no maximo 30 palavras. Etiquetas: "
           TABLE_NAME: !Ref BedrockMetadataImagesS3Table
           SNS_TOPIC_ARN: !Ref ContentDeliveryNotificationTopic
       Policies:
