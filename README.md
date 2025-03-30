@@ -5,6 +5,10 @@ Este projeto contém o código-fonte e arquivos de suporte para uma aplicação 
 - `categorize` - Código para a função Lambda que categoriza imagens.
 - `generateContent` - Código para a função Lambda que gera conteúdo usando o Bedrock.
 - `presignedUrl` - Código para a função Lambda que gera URLs pré-assinadas para upload de arquivos no S3.
+- `getAllProducts` - Código para a função Lambda que busca todo o conteúdo no DynamoBD.
+- `getProductById` - Código para a função Lambda que busca o conteúdo no DynamoBD pelo ID.
+- `getTop5LabelsPerHour` - Código para a função Lambda que cria o ranking dos top 5 Labels da ultima hora.
+- `getTop5LabelsAgendadorCloudWatch` - Código para a função Lambda que cria o ranking dos top 5 Labels da ultima hora.
 - `events` - Eventos de invocação que podem ser usados para invocar a função.
 - `template.yaml` - Um template que define os recursos AWS da aplicação.
 - `README.md` - Documentação do projeto.
