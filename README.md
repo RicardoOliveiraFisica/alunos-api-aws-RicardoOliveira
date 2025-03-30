@@ -32,6 +32,10 @@ A função Lambda em `getAllProducts/app.py` é responsável por buscar todos os
 
 A função Lambda em `getProductById/app.py` é responsável por buscar pelo Id o produto registrado na base de dados do DynamoBD e devolve-las no path `/products/{id}`.
 
+### Get Product By Id
+
+A função Lambda em `getTop5LabelsPerHour/app.py` é responsável por buscar as labels dos produtos registrados na base de dados do DynamoBD na ultima hora e devolver o ranking dos top 5 no path `/getLabels`.
+
 ## Recursos AWS
 
 Os recursos AWS são definidos no arquivo `template.yaml`. Este arquivo inclui definições para:
