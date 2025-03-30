@@ -48,6 +48,7 @@ Os recursos AWS são definidos no arquivo `template.yaml`. Este arquivo inclui d
 - Bucket S3 para upload de imagens.
 - Funções Lambda para categorizar imagens, gerar conteúdo e criar URLs pré-assinadas.
 - Fila SQS para comunicação entre as funções Lambda.
+- CloudWatch para agendar tarefas
 
 ## Implantação
 
