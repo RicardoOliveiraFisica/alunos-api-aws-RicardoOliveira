@@ -18,11 +18,15 @@ A função Lambda em `categorize/app.py` é responsável por detectar labels em 
 
 ### Generate Content
 
-A função Lambda em `generateContent/app.py` é responsável por gerar conteúdo usando o Bedrock com base nas labels detectadas e enviadas para a fila SQS.
+A função Lambda em `generateContent/app.py` é responsável por gerar conteúdo usando o Bedrock com base nas labels detectadas e enviadas para a fila SQS e registra-las na base de dados do DynamoBD.
 
 ### Presigned URL
 
 A função Lambda em `presignedUrl/app.py` é responsável por gerar URLs pré-assinadas para upload de arquivos no S3.
+
+### Get All Products
+
+A função Lambda em `getAllProducts/app.py` é responsável por buscar todos os produtos registrados na base de dados do DynamoBD e devolve-las no path `/products`.
 
 ## Recursos AWS
 
