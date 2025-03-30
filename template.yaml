@@ -125,6 +125,27 @@ Resources:
             Path: /products
             Method: get
 
+  GetProductByIdFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource:
+    Properties:
+      CodeUri: getProductById/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref BedrockMetadataImagesS3Table
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref BedrockMetadataImagesS3Table
+      Events:
+        ApiEcommerce:
+          Type: Api
+          Properties:
+            Path: /products/{id}
+            Method: get
+
 Outputs:
   ApiEcommerce:
     Description: API Gateway endpoint URL for Prod stage for function
@@ -141,3 +162,9 @@ Outputs:
   GetAllProductsFunctionIamRole:
     Description: Implicit IAM Role created for function
     Value: !GetAtt GetAllProductsFunction.Arn
+  GetProductByIdFunction:
+    Description: Lambda Function ARN
+    Value: !GetAtt GetProductByIdFunction.Arn
+  GetProductByIdFunctionIamRole:
+    Description: Implicit IAM Role created for function
+    Value: !GetAtt GetProductByIdFunction.Arn

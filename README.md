@@ -28,6 +28,10 @@ A função Lambda em `presignedUrl/app.py` é responsável por gerar URLs pré-a
 
 A função Lambda em `getAllProducts/app.py` é responsável por buscar todos os produtos registrados na base de dados do DynamoBD e devolve-las no path `/products`.
 
+### Get Product By Id
+
+A função Lambda em `getProductById/app.py` é responsável por buscar pelo Id o produto registrado na base de dados do DynamoBD e devolve-las no path `/products/{id}`.
+
 ## Recursos AWS
 
 Os recursos AWS são definidos no arquivo `template.yaml`. Este arquivo inclui definições para:
