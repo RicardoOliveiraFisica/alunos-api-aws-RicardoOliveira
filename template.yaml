@@ -167,6 +167,29 @@ Resources:
             Path: /getLabels
             Method: get
 
+  GetTop5LabelsAgendadorCloudWatchFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource:
+    Properties:
+      CodeUri: getTop5LabelsAgendadorCloudWatch/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      MemorySize: 256
+      Timeout: 10
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref BedrockMetadataImagesS3Table
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref BedrockMetadataImagesS3Table
+      Events:
+        AgendadorCloudWatch:
+          Type: Schedule
+          Properties:
+            Schedule: "rate(1 hour)"  # Executa a cada 1 hora
+            Enabled: true
+
 Outputs:
   ApiEcommerce:
     Description: API Gateway endpoint URL for Prod stage for function

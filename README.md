@@ -32,9 +32,14 @@ A função Lambda em `getAllProducts/app.py` é responsável por buscar todos os
 
 A função Lambda em `getProductById/app.py` é responsável por buscar pelo Id o produto registrado na base de dados do DynamoBD e devolve-las no path `/products/{id}`.
 
-### Get Product By Id
+### Get Top 5 Labels Per Hour
 
 A função Lambda em `getTop5LabelsPerHour/app.py` é responsável por buscar as labels dos produtos registrados na base de dados do DynamoBD na ultima hora e devolver o ranking dos top 5 no path `/getLabels`.
+
+### Get Top 5 Labels Agendador CloudWatch
+
+A função Lambda em `getTop5LabelsAgendadorCloudWatch/app.py` é responsável por buscar as labels dos produtos registrados na base de dados do DynamoBD na ultima hora e registrar nos logs do Agendador CloudWatch, onde esta configurada para ser acionada a cada hora.
+Justificativa: esse analitico serve para o gestor do sistema entender as tendencias de produtos carregados e direcionar o marketing para impulsionar as vendas dos itens do momento
 
 ## Recursos AWS
 
